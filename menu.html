@@ -238,8 +238,7 @@
                             <legend>Place an Order!</legend>
                             <div>
                                 <label for="itemName">Select Side:</label>
-                                <select id="itemName" name="itemName">
-                                    <option value="noSide">None</option>
+                                <select id="sideSelect" name="sideSelect">
                                     <option value="oatmeal">Oatmeal</option>
                                     <option value="Hashbrowns">Hashbrowns</option>
                                     <option value="Cereal Cups">Cereal Cups</option>
@@ -253,8 +252,7 @@
                             <br>
                             <div>
                                 <label for="itemName">Select Entree:</label>
-                                <select id="itemName" name="itemName">
-                                    <option value="noEntree">None</option>
+                                <select id="entreeSelect" name="entreeSelect">
                                     <option value="FrenchToast">French Toast</option>
                                     <option value="Pancakes">Pancakes</option>
                                     <option value="Omelette">Omelette</option>
@@ -398,7 +396,6 @@
                     <div>
                         <label for="itemName">Select Side:</label>
                         <select id="itemName" name="itemName">
-                            <option value="noSide">None</option>
                             <option value="Fries">French Fries</option>
                             <option value="Salad">Side Salad</option>
                             <option value="Breadsticks">Breadsticks</option>
@@ -413,7 +410,6 @@
                     <div>
                         <label for="itemName">Select Entree:</label>
                         <select id="itemName" name="itemName">
-                            <option value="noEntree">None</option>
                             <option value="Burger">Cheeseburger</option>
                             <option value="Pizza">Cheese Pizza</option>
                             <option value="Tacos">Beef Fajita Tacos</option>
@@ -567,13 +563,6 @@
                 event.preventDefault();
 
                 const formData = new FormData(form);
-                const name = formData.get('name');
-                const menuOption = formData.get('itemName');
-
-                if (menuOption === 'noEntree'){
-                    alert("Cannot Place Order, None Was Chosen");
-                    return;
-                }
 
                 alert("Order Received. See You Soon!");
 
